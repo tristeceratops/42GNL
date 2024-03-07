@@ -1,0 +1,14 @@
+bonus :
+une seule variable statique avec plusieurs fd possibles
+avoir un seul char * où avant de stocker le txt on stock la valeur de fd ce qui permettra de le récupérer
+
+fonction go_after(char * str, char *str2)
+-> ce déplace après la première occurence de str2
+
+la main fonction variable:
+un char* static pour stocké
+un char* pour contenir le contenu de read
+si le char static est vide -> read le fichier, afficher premiere ligne et ajouter le reste a static avec join
+sinon prendre la prochaine ligne, l'afficher et avancer le pointer
+arreter d'avoir la flemme
+fd comprit entre 1 et 1024
