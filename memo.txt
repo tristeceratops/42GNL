@@ -12,3 +12,13 @@ si le char static est vide -> read le fichier, afficher premiere ligne et ajoute
 sinon prendre la prochaine ligne, l'afficher et avancer le pointer
 arreter d'avoir la flemme
 fd comprit entre 1 et 1024
+
+
+faire avec les liste :
+struct node {
+	char	c;
+	node	*next;
+}
+fonction nécessaire -> new_node, del_one
+algo : créer un nouveau node pour chaque char
+boucler jusqu'au prochain \n, créer le str et stocker les char dedans avant de suppr les nodes

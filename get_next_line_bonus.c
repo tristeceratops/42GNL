@@ -38,25 +38,17 @@ int	ft_strlen(const char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	**remainder;
+	static char	*remainder[1024];
 	char		*buffer;
 	int			bytes_read;
 	char		*line;
 
-	if(!remainder)
-	{
-		remainder = malloc(sizeof(char *) * 1025);
-		if (!remainder)
-			return (NULL);
-	}
-	if (fd <= 0)
+	if (fd < 0 || fd >= 1024)
 		return (NULL);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	bytes_read = 1;
-	if (!remainder[fd])
-		remainder[fd] = NULL;
 	while (!has_newline(remainder[fd]) && bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
@@ -74,23 +66,26 @@ char	*get_next_line(int fd)
 	line = get_line(&remainder[fd]);
 	return (line);
 }
-/*
+
 int	main(void)
 {
 	int	fd = open("b.txt", O_RDONLY);
+	int	fd2 = open("test.txt", O_RDONLY);
 	char	*buffer;
 
 	buffer = get_next_line(fd);
 	printf("%s", buffer); free(buffer);
-	buffer = get_next_line(fd);
+	buffer = get_next_line(fd2);
         printf("%s", buffer); free(buffer);
 	buffer = get_next_line(fd);
         printf("%s", buffer); free(buffer);
-	buffer = get_next_line(fd);
+	buffer = get_next_line(fd2);
         printf("%s", buffer); free(buffer);
 	buffer = get_next_line(fd);
         printf("%s", buffer); free(buffer);
-	buffer = get_next_line(fd);
+	buffer = get_next_line(fd2);
+        printf("%s", buffer); free(buffer);
+	buffer = get_next_line(fd2);
         printf("%s", buffer); free(buffer);
 	close(fd);
-}*/
+}
