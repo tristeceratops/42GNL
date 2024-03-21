@@ -6,7 +6,7 @@
 /*   By: ewoillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:01:59 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/03/07 13:03:03 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:41:47 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*get_next_line(int fd)
 	line = get_line(&remainder);
 	return (line);
 }
-
+/*
 int	main(void)
 {
 	int	fd = open("b.txt", O_RDONLY);
@@ -83,4 +83,4 @@ int	main(void)
 	buffer = get_next_line(fd);
         printf("%s", buffer); free(buffer);
 	close(fd);
-}
+}*/

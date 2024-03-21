@@ -6,11 +6,11 @@
 /*   By: ewoillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:24:39 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/03/07 13:12:01 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:55:57 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 #include <stdio.h>
 
